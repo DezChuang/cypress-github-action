@@ -6,6 +6,10 @@ jobs:
   cypress-run:
     runs-on: ubuntu-22.04
     steps:
+      - name: Install pnpm
+        run: npm install -g pnpm
+      - name: Install dependencies
+        run: pnpm install
       - name: Checkout
         uses: actions/checkout@v4
       - name: Cypress run
